@@ -2,10 +2,10 @@ namespace WestcoastBank;
 
 
 
-public class Account(string accountNo)
+public class Account()
 {
     public virtual int Balance { get; private set; }
-    public string AccountNumber { get; } = accountNo;
+    public string AccountNumber { get; } = "";
     public string? FirstName { get; set; }
     public string? LastName { get; set; }
     public List<Transaction> Transactions { get; } = [];
