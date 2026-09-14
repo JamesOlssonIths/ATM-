@@ -6,6 +6,9 @@ class Program
 {
     static SavingsAccount account = new() { };
 
+
+  
+
     //static Savingsaccount accountSaving = new("1234-5678") { };
 
 
@@ -13,13 +16,13 @@ class Program
     static void Main()
     {
         
-        account.FirstName = "Michael";
         // Här är vår enkla meny...
         Console.WriteLine("--------------------------------------------------");
         Console.WriteLine("För att sätta in tryck på tangenten 'd'");
         Console.WriteLine("För att ta ut tryck på tangenten 'w'");
         Console.WriteLine("För att se saldo tryck på tangenten 'b'");
         Console.WriteLine("För att se transaktionerna tryck på tangenten 't'");
+        
         Console.WriteLine("För att avsluta tryck på tangenten 'x'");
         Console.WriteLine("--------------------------------------------------");
 

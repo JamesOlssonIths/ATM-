@@ -6,9 +6,10 @@ public class Account()
 {
     public virtual int Balance { get; private set; }
     public string AccountNumber { get; } = "";
-    public string? FirstName { get; set; }
-    public string? LastName { get; set; }
+ 
     public List<Transaction> Transactions { get; } = [];
+
+    Customer? customer;
 
     public void Deposit(int amount)
     {
