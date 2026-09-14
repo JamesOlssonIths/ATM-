@@ -1,11 +1,12 @@
-﻿﻿using WestcoastBank;
+﻿﻿﻿using WestcoastBank;
 
 namespace ATM;
 
 class Program
 {
     // static Account account = new Account("1234-5678");
-    static Account account = new("1234-5678") { };
+    static SavingsAccount account = new("1234-5678") { };
+    // static Account account = new("1234-5678") { };
 
     // static Account account = new() { accountNumber = "1234-5678" };
 
