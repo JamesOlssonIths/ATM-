@@ -1,11 +1,11 @@
-﻿﻿﻿using WestcoastBank;
-
-namespace ATM;
+﻿﻿namespace WestcoastBank;
 
 class Program
 {
-    static SavingsAccount account = new() { };
+    static Account account_1 = new("1234-5678","James","olsson");
+    static SavingsAccount account_2 = new("1234-5678","James","olsson");
 
+    static List<Account> Accounts = [];
 
   
 
@@ -15,6 +15,8 @@ class Program
 
     static void Main()
     {
+        Accounts.Add(account_1);
+        Accounts.Add(account_2);
         
         // Här är vår enkla meny...
         Console.WriteLine("--------------------------------------------------");
@@ -22,7 +24,7 @@ class Program
         Console.WriteLine("För att ta ut tryck på tangenten 'w'");
         Console.WriteLine("För att se saldo tryck på tangenten 'b'");
         Console.WriteLine("För att se transaktionerna tryck på tangenten 't'");
-        
+        Console.WriteLine("För att se konto uppgifter tryck på tangenten 'k'");
         Console.WriteLine("För att avsluta tryck på tangenten 'x'");
         Console.WriteLine("--------------------------------------------------");
 
@@ -49,6 +51,9 @@ class Program
                         break;
                     case "t":
                         DisplayTransactions();
+                        break;
+                    case "k":
+                        DisplayAccounts();
                         break;
                     case "d":
                         Console.WriteLine("Hur mycket vill du sätta in?");
@@ -101,24 +106,46 @@ class Program
     }
 
     static void Deposit(int amount)
-    {
-        account.Deposit(amount);
+    {   
+        // Account 
+        account_1.Deposit(amount);
+        // saving
+        account_2.Deposit(amount);
     }
 
     static void WithDraw(int amount)
     {
-        account.WithDraw(amount);
+        account_1.WithDraw(amount);
     }
     static void DisplayBalance()
     {
-        Console.WriteLine($"Ditt nuvarande saldo: {account.Balance}");
+       
+        Console.WriteLine($"Ditt nuvarande saldo: {account_1.Balance}");
     }
 
     static void DisplayTransactions()
     {
-        foreach (var tran in account.Transactions)
+        foreach (var tran in account_1.Transactions)
         {
             Console.WriteLine(tran.ToString());
         }
+       
+        foreach (var tran in account_2.Transactions)
+        {
+            Console.WriteLine(tran.ToString());
+        }
+       
     }
+
+    static void DisplayAccounts()
+    {
+        foreach (var item in Accounts)
+        {
+            Console.WriteLine(item.Balance);
+        }
+
+    }
+
+
+
 }
